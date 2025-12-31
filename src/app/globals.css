@@ -1,42 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Epic Palette: Blue, Purple, Red, White */
+  /* Using deeply saturated darks for background and neon-like brights for accents */
+
+  --color-bg: #030014;
+  /* Deep dark void */
+  --color-text: #ffffff;
+
+  --color-primary-dark: #2a0e61;
+  --color-primary: #581c87;
+  /* Purple-ish */
+  --color-primary-light: #7c3aed;
+
+  --color-secondary: #0ea5e9;
+  /* Cyan/Blue */
+  --color-secondary-dark: #0369a1;
+
+  --color-accent: #ef4444;
+  /* Red */
+  --color-accent-glow: #f87171;
+
+  --glass-bg: rgba(3, 0, 20, 0.3);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-[var(--color-bg)] text-[var(--color-text)] overflow-x-hidden;
+    background-image:
+      radial-gradient(circle at 50% 0%, var(--color-primary-dark), transparent 50%),
+      radial-gradient(circle at 100% 0%, var(--color-secondary-dark), transparent 50%);
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-md border border-[var(--glass-border)] bg-[var(--glass-bg)];
   }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px var(--color-primary-light);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-secondary)] via-[var(--color-text)] to-[var(--color-primary-light)];
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
