@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Space_Grotesk } from "next/font/google";
 import { ReactNode } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en" className={spaceGrotesk.className}>
       <body className="antialiased">
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
