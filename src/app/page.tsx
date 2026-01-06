@@ -15,6 +15,7 @@ import Volunteer from "@/components/Volunteer";
 import Certifications from "@/components/Certifications";
 import About from "@/components/About";
 import { motion, AnimatePresence } from "framer-motion";
+import { PROFILE } from "@/constants";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);

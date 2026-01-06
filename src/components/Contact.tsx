@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, ArrowRight } from "lucide-react";
+import { Mail, Github, Linkedin, ArrowRight, FileText } from "lucide-react";
 import { PROFILE } from "@/constants";
 
 export default function Contact() {
@@ -44,6 +44,22 @@ export default function Contact() {
                                     <social.icon size={20} />
                                 </motion.a>
                             ))}
+
+                            {/* Resume Link */}
+                            <div className="relative group">
+                                <motion.a
+                                    href={PROFILE.resume}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    whileHover={{ scale: 1.1, color: "#ffffff" }}
+                                    className="block p-4 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:bg-white/10 hover:border-white/30 transition-all"
+                                >
+                                    <FileText size={20} />
+                                </motion.a>
+                                <span className="absolute -top-10 left-1/2 -translate-x-1/2 px-3 py-1 bg-white/10 backdrop-blur-md border border-white/10 rounded-lg text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                                    Download My Resume
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>

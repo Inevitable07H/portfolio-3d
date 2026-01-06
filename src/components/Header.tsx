@@ -12,7 +12,7 @@ const NAV_ITEMS = [
     { name: "Volunteer", href: "#volunteer" },
     { name: "Awards", href: "#awards" },
     { name: "Certifications", href: "#certifications" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact & CV", href: "#contact" },
 ];
 
 export default function Header() {

@@ -21,7 +21,8 @@ export const PROFILE = {
       url: "https://mail.google.com/mail/?view=cm&fs=1&to=Vighnesh2464004@gmail.com",
       icon: Mail,
     },
-  ]
+  ],
+  resume: "https://autumn-haze-426.linkyhost.com", // Placeholder
 };
 
 export const EDUCATION = [
