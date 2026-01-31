@@ -51,7 +51,7 @@ export const EXPERIENCE = [
   {
     company: "Tata Consultancy Services (TCS)",
     role: "Graduate Trainee",
-    date: "Will Commence from Jan 2026",
+    date: "Jan 2026 - Present.",
     description: "",
     isPlaceholder: true, // Flag to style differently
   },
